@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4MEN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+    body,
+    html {
+        width: 100%;
+        background-color: rgb(10, 26, 36);
+    }
+
+    nav {
+        font-variant: small-caps;
+        text-align: center;
+        color: antiquewhite;
+        background-color: rgb(10, 26, 36);
+        padding: 5px;
+    }
+
+    nav>h1 {
+        font-size: 4vw;
+    }
+
+    nav>img {
+        align-items: left;
+
+    }
+
+    section.sobre {
+        background-color: gray;
+    }
+
+    section.frase {
+        box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.644);
+        background-color: gray;
+        font-variant: small-caps;
+        font-size: 2vw;
+        text-align: center;
+        padding: 10px;
+    }
+
+    section.roupas {
+        background-color: rgba(255, 255, 255, 0.466);
+        border-radius: 1000px;
+        padding: 20px;
+        margin: 20px;
+        display: flex;
+
+    }
+
+    .jaqueta {
+        padding-left: 2vw;
+        border-radius: 30px;
+    }
+
+    .calca {
+        padding-left: 2vw;
+    }
+
+    .tenis {
+        padding-left: 2vw;
+    }
+
+    .camisas {
+        padding-left: 2vw;
+    }
+
+    .under {
+        padding-left: 2vw;
+
+    }
+
+
+    footer {
+        background-color: black;
+        text-align: center;
+        color: aliceblue;
+    }
+
+
+
+
+    /* 
+========================
+      BUTTON TWO
+========================
+*/
+    .btn-two {
+        color: #FFF;
+        transition: all 0.5s;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.473);
+    }
+
+    .btn-two span {
+        z-index: 2;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-two::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-two::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-two:hover::before {
+        transform: rotate(-45deg);
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .btn-two:hover::after {
+        transform: rotate(45deg);
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    h5 {
+        background-color: rgba(0, 0, 0, 0.404);
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    a:hover {
+        color: bisque;
+    }
+
+    .jaqueta:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+
+    .calca:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+
+    }
+
+    .tenis:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+
+    .camisas:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+
+    .under:hover {
+        -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+
+    .destaques {
+        background-color: rgb(58, 58, 58);
+        background-image: url(https://www.lacasadelrap.com/wp-content/uploads/2021/12/Juice-WRLD-Fighting-Demons-cover.jpg);
+        background-repeat: no-repeat;
+        width: 85vh;
+        height: 28vw;
+        background-position-y: bottom;
+        background-size: 800px;
+        background-attachment: fixed;
+        box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.479);
+    }
+
+    .colecao {
+        display: flex;
+    }
+
+    .destaquestexto {
+        box-shadow: 6px 6px 13px 0px rgba(0, 0, 0, 0.479);
+        margin: 30px;
+        border-radius: 15px;
+        background-color: rgba(128, 128, 128, 0.486);
+        width: 40vw;
+        height: 15vh;
+        padding: 1%;
+        font-size: 1vw;
+        font-variant: small-caps;
+        text-align: ;
+    }
+
+    .destaquestexto>p {
+        color: white;
+    }
+
+    .destaquestexto>h1 {
+        color: white;
+    }
+
+
+    .text-box {
+        margin-left: 1vw;
+        margin-top: 1vh;
+    }
+
+    .btn:link,
+    .btn:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 40px;
+        display: inline-block;
+        border-radius: 100px;
+        transition: all .2s;
+        position: absolute;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-white {
+        background-color: #fff;
+        color: #777;
+    }
+
+    .btn::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+    .btn-white::after {
+        background-color: #fff;
+    }
+
+    .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
+
+    .btn-animated {
+        animation: moveInBottom 5s ease-out;
+        animation-fill-mode: backwards;
+    }
+
+    @keyframes moveInBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    .entregas {
+        background-color: rgba(119, 119, 119, 0.473);
+        display: flex;
+    }
+
+    .devolucao>h1 {
+        color: white;
+        font-size: 100%;
+    }
+
+    .frete>h1 {
+        color: white;
+        font-size: 100%;
+    }
+
+    .pagamento>h1 {
+        color: white;
+        font-size: 100%;
+    }
+</style>
+
+<body>
+
+    </div>
+
+    <header>
+        <nav>
+            <h1>
+                <img src="https://i.imgur.com/DUxNijE.png" width="6%">
+                <img src="https://i.imgur.com/Dhp0aKY.png" width="30%">
+            </h1>
+        </nav>
+    </header>
+
+
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://wallpapercave.com/wp/wp6737296.jpg" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lançamentos:</h5>
+                    <p class="btn-two"> <b>Mais sobre nossa mais nova coleção.</b> </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.imgur.com/YbhBq4d.jpeg" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lançamentos:</h5>
+                    <p class="btn-two"> <b>Mais sobre nossa mais nova coleção.</b> </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://i.imgur.com/iiTYr7T.png" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lançamentos:</h5>
+                    <p class="btn-two"> <b>Mais sobre nossa mais nova coleção.</b> </p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!--<h1>
+            <img src="https://wallpapercave.com/wp/wp6737296.jpg" width="30%">
+            <img src="https://storage.googleapis.com/kondzilla-wp/2021/10/Matue.jpg" width="30%">
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </h1>-->
+    <!--<p class="btn-two">Some representative placeholder content for the first slide.</p>-->
+
+    <section class="frase">
+        <p> <b> O <i>estilo</i> quem faz é você. </b> </p>
+    </section>
+
+
+    <section class="roupas">
+
+
+        <div class="jaqueta">
+            <a href="https://programandosolucoes.ev.br/2021/05/18/botao-animado-html-css/" target="_blank"><img
+                    src="https://i.imgur.com/kFVlcM8.png" width="75%"> </a>
+        </div>
+
+        <div class="calca">
+            <a href="https://programandosolcoes.dev.br/2021/05/18/botao-animado-html-css/" target="_blank"><img
+                    src="https://i.imgur.com/C5XhMcg.png" width="75%"> </a>
+        </div>
+
+        <div class="tenis">
+            <a href="https://programandosolcoes.dev.br/2021/05/18/botao-animado-html-css/" target="_blank"><img
+                    src="https://i.imgur.com/MtufK9v.png" width="75%"> </a>
+        </div>
+
+        <div class="camisas">
+            <a href="https://programandosolucoes.de.br/2021/05/18/botao-animado-html-css/" target="_blank"><img
+                    src="https://i.imgur.com/5CFLXta.png" width="75%"> </a>
+        </div>
+
+        <div class="under">
+            <a href="https://programandosolucoes.dv.br/2021/05/18/botao-animado-html-css/" target="_blank"><img
+                    src="https://i.imgur.com/ZK4HU5q.png" width="75%"> </a>
+        </div>
+
+    </section>
+
+    <section class="colecao">
+
+        <div>
+            <section class="destaques"></section>
+        </div>
+
+        <div class="destaquestexto">
+            <h1> <b>Gothic leather</b></h1>
+            <p>Confira ja nossa mais nova coleção, de estilo único e com espírito consciente.</p>
+
+
+            <div class="text-box">
+                <a href="#" class="btn btn-white btn-				 animate">Adquira já</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="entregas">
+        <div class="devolucao">
+            <img src="https://cdn-icons-png.flaticon.com/512/725/725004.png" width="10%" height="60%">
+            <h1>
+                Devolução fácil
+            </h1>
+        </div>
+
+        <div class="frete">
+            <img src="https://i.imgur.com/yyRem2q.png" width="15%" height="65%">
+            <h1>
+                Frete grátis
+            </h1>
+        </div>
+
+        <div class="pagamento">
+            <img src="https://www.imagensempng.com.br/wp-content/uploads/2021/09/01-17.png" width="10%" height="60%">
+            <h1>
+                Pagamento fácil e rápido
+            </h1>
+        </div>
+    </section>
+
+
+
+    <footer>
+        Site feito por:
+        <a href="https://www.instagram.com/rubric_/" target="_blank">@_rubric</a>
+    </footer>
+    </div>
+</body>
+
+</html>
